@@ -1,6 +1,8 @@
 import express, {Express} from 'express';
 import morgan from 'morgan';
+import dotenv from "dotenv";
 
+dotenv.config({path: './config.env'});
 
 //! Types for request mw
 declare module 'express-serve-static-core' {
