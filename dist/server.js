@@ -8,18 +8,24 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config({ path: "./config.env" });
 const app_1 = require("./app");
-const DB = (_a = process.env.DATABASE) === null || _a === void 0 ? void 0 : _a.replace("<PASSWORD>", process.env.DATABASEPASSWORD || "570570570");
-mongoose_1.default
-    .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-})
-    .then(() => {
+const DB = (_a = process.env.DATABASE) === null || _a === void 0 ? void 0 : _a.replace("<PASSWORD>", process.env.DATABASEPASSWORD || "570572203");
+console.log(process.env.DATABASEPASSWORD);
+// mongoose
+//     .connect(DB as string, {
+//         useNewUrlParser: true,
+//         useCreateIndex: true,
+//         useFindAndModify: false,
+//         useUnifiedTopology: true
+//     } as ConnectOptions)
+//     .then(() => {
+//         console.log("DB connection ");
+//     })
+//     .catch(() => {
+//         console.log("SOMETHING WRONG WITH DB");
+//     });
+mongoose_1.default.connect(DB, {}).then(() => {
     console.log("DB connection ");
-})
-    .catch(() => {
+}).catch(() => {
     console.log("SOMETHING WRONG WITH DB");
 });
 const port = process.env.PORT || 3000;

@@ -13,7 +13,6 @@ declare module 'express-serve-static-core' {
 
 
 export const app: Express = express();
-console.log(process.env.NODE_ENV);
 
 //! MIDDLEWARE
 app.use(morgan('dev'));
