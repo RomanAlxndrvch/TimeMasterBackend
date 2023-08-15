@@ -1,4 +1,4 @@
-import mongoose, {ConnectOptions} from "mongoose";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config({path: "./config.env"});
@@ -9,7 +9,6 @@ const DB = process.env.DATABASE?.replace(
     "<PASSWORD>",
     process.env.DATABASEPASSWORD || "570572203"
 );
-console.log(process.env.DATABASEPASSWORD)
 
 // mongoose
 //     .connect(DB as string, {
@@ -26,7 +25,7 @@ console.log(process.env.DATABASEPASSWORD)
 //     });
 
 mongoose.connect(DB as string, {}).then(() => {
-    console.log("DB connection ");
+    console.log("DB connected ");
 }).catch(() => {
     console.log("SOMETHING WRONG WITH DB");
 });
