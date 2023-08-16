@@ -18,10 +18,5 @@ export const app: Express = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
-// app.use((req, res, next) => {
-//   req.requestTime = new Date().toISOString();
-//   next();
-// });
-
 //! ROUTES ////////////////////////////////////////
 

@@ -10,20 +10,6 @@ const DB = process.env.DATABASE?.replace(
     process.env.DATABASEPASSWORD || "570572203"
 );
 
-// mongoose
-//     .connect(DB as string, {
-//         useNewUrlParser: true,
-//         useCreateIndex: true,
-//         useFindAndModify: false,
-//         useUnifiedTopology: true
-//     } as ConnectOptions)
-//     .then(() => {
-//         console.log("DB connection ");
-//     })
-//     .catch(() => {
-//         console.log("SOMETHING WRONG WITH DB");
-//     });
-
 mongoose.connect(DB as string, {}).then(() => {
     console.log("DB connected ");
 }).catch(() => {
