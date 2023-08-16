@@ -12,8 +12,4 @@ exports.app = (0, express_1.default)();
 //! MIDDLEWARE
 exports.app.use((0, morgan_1.default)('dev'));
 exports.app.use(express_1.default.json());
-// app.use((req, res, next) => {
-//   req.requestTime = new Date().toISOString();
-//   next();
-// });
 //! ROUTES ////////////////////////////////////////

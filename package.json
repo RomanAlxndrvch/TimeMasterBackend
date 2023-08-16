@@ -5,9 +5,9 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "concurrently \"rimraf dist\" \" npx tsc\"",
+    "start:node": "node dist/index.js",
     "prestart": "npm run build",
-    "start": "node dist/index.js",
-    "start:dev": "concurrently \"npx tsc -w\" \" nodemon dist/server.js\""
+    "start": "concurrently \"npx tsc -w\" \" nodemon dist/server.js\""
   },
   "keywords": [],
   "author": "",
