@@ -18,9 +18,20 @@ const employeesSchema = new Schema<employeesSchemaType>({
         type: Number,
         required: [true, 'Each employee must have a login password'],
     },
-    totalAmountHoursPerMonth: {type: Number, required: true, default: 0},
-    hoursPerDay: {type: Number, required: true, default: 0},
-    workingDays: {type: [Date], required: true}
+    totalAmountHoursPerMonth: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    hoursPerDay: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    workingDays: {
+        type: [Date],
+        required: true
+    }
 })
 
 const Employees = model('Employees', employeesSchema)
