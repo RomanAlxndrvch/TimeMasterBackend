@@ -2,7 +2,7 @@ import express from "express";
 import {getAllEmployees} from "../controllers/employeesController";
 
 
-export const employeesRoutes = express.Router()
+export const employeesRouter = express.Router()
 
-employeesRoutes.route('/').get(getAllEmployees)
+employeesRouter.route('/').get(getAllEmployees)
 

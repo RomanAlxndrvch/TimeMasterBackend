@@ -1,6 +1,8 @@
 import express, {Express} from 'express';
 import morgan from 'morgan';
 import dotenv from "dotenv";
+import {employeesRouter} from './routes/employeesRoutes';
+
 
 dotenv.config({path: './config.env'});
 
@@ -19,4 +21,5 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //! ROUTES ////////////////////////////////////////
+app.use('/api/employees', employeesRouter)
 

@@ -7,9 +7,11 @@ exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const dotenv_1 = __importDefault(require("dotenv"));
+const employeesRoutes_1 = require("./routes/employeesRoutes");
 dotenv_1.default.config({ path: './config.env' });
 exports.app = (0, express_1.default)();
 //! MIDDLEWARE
 exports.app.use((0, morgan_1.default)('dev'));
 exports.app.use(express_1.default.json());
 //! ROUTES ////////////////////////////////////////
+exports.app.use('/api/employees', employeesRoutes_1.employeesRouter);

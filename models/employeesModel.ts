@@ -34,4 +34,4 @@ const employeesSchema = new Schema<employeesSchemaType>({
     }
 })
 
-const Employees = model('Employees', employeesSchema)
+export const Employees = model('Employees', employeesSchema)
