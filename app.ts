@@ -17,6 +17,7 @@ declare module 'express-serve-static-core' {
 
 export const app: Express = express();
 app.use(cors())
+app.disable('etag');
 /*app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.setHeader("Access-Control-Allow-Credentials", "true");

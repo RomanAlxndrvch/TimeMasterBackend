@@ -12,6 +12,7 @@ const employeesRoutes_1 = require("./routes/employeesRoutes");
 dotenv_1.default.config({ path: './config.env' });
 exports.app = (0, express_1.default)();
 exports.app.use((0, cors_1.default)());
+exports.app.disable('etag');
 /*app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.setHeader("Access-Control-Allow-Credentials", "true");
