@@ -1,6 +1,7 @@
 import express, {Express} from 'express';
 import morgan from 'morgan';
 import dotenv from "dotenv";
+import cors from "cors";
 import {employeesRouter} from './routes/employeesRoutes';
 
 
@@ -15,6 +16,16 @@ declare module 'express-serve-static-core' {
 
 
 export const app: Express = express();
+
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Max-Age", "1800");
+    res.setHeader("Access-Control-Allow-Headers", "content-type");
+    res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
+    next()
+})
+app.use(cors())
 
 //! MIDDLEWARE
 app.use(morgan('dev'));
