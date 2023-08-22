@@ -1,21 +1,13 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import http from 'http';
-import {Server} from "socket.io";
-import cors from "cors";
 import {app} from "./app";
-import {NextFunction} from "express";
 
 dotenv.config({path: "./config.env"});
-
-
-const server = http.createServer(app)
 
 const DB = process.env.DATABASE?.replace(
     "<PASSWORD>",
     process.env.DATABASEPASSWORD || "570572203"
 );
-
 
 mongoose.connect(DB as string, {}).then(() => {
     console.log("DB connected ");
