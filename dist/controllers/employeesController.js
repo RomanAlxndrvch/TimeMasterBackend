@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllEmployees = void 0;
+exports.getEmployeeById = exports.getAllEmployees = void 0;
 const employeesModel_1 = require("../models/employeesModel");
 const getAllEmployees = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -23,7 +23,7 @@ const getAllEmployees = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
     catch (err) {
         res.status(400).json({
-            status: "success",
+            status: "error",
             data: {
                 data: err
             }
@@ -31,3 +31,23 @@ const getAllEmployees = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.getAllEmployees = getAllEmployees;
+const getEmployeeById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const employee = yield employeesModel_1.Employees.findById(req.params.id);
+        res.status(200).json({
+            status: 'success',
+            data: {
+                employee
+            }
+        });
+    }
+    catch (err) {
+        res.status(400).json({
+            status: "error",
+            data: {
+                data: err
+            }
+        });
+    }
+});
+exports.getEmployeeById = getEmployeeById;

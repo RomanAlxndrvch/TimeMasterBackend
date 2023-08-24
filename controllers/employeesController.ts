@@ -14,7 +14,27 @@ export const getAllEmployees = async (req: Request, res: Response) => {
         });
     } catch (err) {
         res.status(400).json({
-            status: "success",
+            status: "error",
+            data: {
+                data: err
+            }
+        });
+    }
+}
+
+export const getEmployeeById = async (req: Request, res: Response) => {
+    try {
+        const employee = await Employees.findById(req.params.id)
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                employee
+            }
+        })
+    } catch (err) {
+        res.status(400).json({
+            status: "error",
             data: {
                 data: err
             }
